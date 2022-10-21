@@ -1,10 +1,10 @@
-
+using System;
 class Hello 
 {         
 	static void Main(string[] args)
         {
-		System.Console.Clear();
-		System.Console.WriteLine("Hello World!");
-		System.Console.Beep();
+		Console.Clear();
+		Console.WriteLine("Hello World!");
+		Console.Beep();
         }
 }
