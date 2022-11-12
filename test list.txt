@@ -8,3 +8,20 @@ Hello "Gregory Jones" blahblah
 Hello "Gregory Jones" 
 Hello
 Hello Gregory English
+hello french # say hello in french
+
+
+# italian test 
+hello italian # should say hello in italian
+Hello ITALIAN
+hello italian
+hello ItAlIaN
+hello Gregory italian 
+Hello Gregory ITALIAN
+hello Gregory italian
+hello Gregory ItAlIaN
+hello "Gregory Jones" italian 
+Hello "Gregory Jones" ITALIAN
+hello "Gregory Jones" italian
+hello "Gregory Jones" ItAlIaN
+hello Gregory Jones italian #this is to show that it will print Gregory in English
