@@ -1,0 +1,10 @@
+Hello Gregory FrEnCh
+Hello Gregory Jones FrencH
+Hello "Gregory Jones" FrencH
+Hello "Gregory Jones" French
+Hello "Gregory Jones" french blah
+Hello "Gregory Jones" FRENCH
+Hello "Gregory Jones" blahblah
+Hello "Gregory Jones" 
+Hello
+Hello Gregory English
