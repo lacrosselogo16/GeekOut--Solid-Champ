@@ -1,7 +1,6 @@
 using System;
 namespace blah
 {
-
 	class Hello 
 	{       
 		/*
@@ -12,18 +11,25 @@ namespace blah
 		*/  
 		static void Main(string[] args)
         	{
-			Console.Clear();
+			//Console.Clear();
 			
 			if(args.Length > 0)
 				Console.WriteLine(args[0]);
 			//Console.WriteLine(args[1].ToUpper());
 			//Console.WriteLine(args[1]);
 			if(args.Length > 1 && args[1].ToUpper() == "FRENCH")
+			{
 				Console.WriteLine("Bonjour le monde!");
+			}
+			else if(args.Length > 1 && args[1].ToUpper() == "ITALIAN")
+			{
+				Console.WriteLine("Ciao Mondo!");
+			}
 			else
+			{
 				Console.WriteLine("Hello World!");
-
-			Console.Beep();
+			}
+			//Console.Beep();
         	}
 	}
 }
