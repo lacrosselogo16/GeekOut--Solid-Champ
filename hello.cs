@@ -10,26 +10,46 @@ namespace blah
 			Example: hello Gregory French
 		*/  
 		static void Main(string[] args)
-        	{
-			//Console.Clear();
-			
-			if(args.Length > 0)
-				Console.WriteLine(args[0]);
-			//Console.WriteLine(args[1].ToUpper());
-			//Console.WriteLine(args[1]);
-			if(args.Length > 1 && args[1].ToUpper() == "FRENCH")
-			{
-				Console.WriteLine("Bonjour le monde!");
-			}
-			else if(args.Length > 1 && args[1].ToUpper() == "ITALIAN")
-			{
-				Console.WriteLine("Ciao Mondo!");
-			}
-			else
+        {
+        	if(args.Length == 0)
 			{
 				Console.WriteLine("Hello World!");
 			}
-			//Console.Beep();
-        	}
+			if(args.Length > 0)
+			{
+				if(args[0].ToUpper() == "FRENCH")
+				{
+					Console.WriteLine("Bonjour le monde!");
+				}
+				else if(args[0].ToUpper() == "ITALIAN")
+				{
+					Console.WriteLine("Ciao Mondo!");
+				}
+				else if(args[0].ToUpper() == "ENGLISH" || args[0] == "")
+				{
+					Console.WriteLine("Hello World!");
+				}
+				else
+				{
+					Console.WriteLine(args[0]);
+				}	
+			}
+
+			if(args.Length > 1)
+			{
+				if(args[1].ToUpper() == "FRENCH")
+				{
+					Console.WriteLine("Bonjour le monde!");
+				}
+				else if(args[1].ToUpper() == "ITALIAN")
+				{
+					Console.WriteLine("Ciao Mondo!");
+				}
+				else if(args[1].ToUpper() == "ENGLISH" || args[1] == "")
+				{
+					Console.WriteLine("Hello World!");
+				}
+			}
+    	}
 	}
 }

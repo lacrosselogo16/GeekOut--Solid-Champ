@@ -21,21 +21,30 @@ hello Gregory EnGlIsH
 hello "Gregory Jones" english 
 Hello "Gregory Jones" ENGLISH
 hello "Gregory Jones" EnGlIsH
-
+hello english Gregory 
+Hello ENGLISH Gregory
+hello EnGlIsH Gregory
+hello english "Gregory Jones" 
+Hello ENGLISH "Gregory Jones"
+hello EnGlIsH "Gregory Jones"
 
 # French test (Success)
-hello french # should say hello in french
+hello french # should say: Bonjour le monde!
 Hello FRENCH
 hello french
 hello FrEnCh
-hello Gregory french 
+hello Gregory french # should say: Bonjour Gregory
 Hello Gregory FRENCH
 hello Gregory fReNcH
 hello "Gregory Jones" french 
 Hello "Gregory Jones" FRENCH
 hello "Gregory Jones" fReNcH
-
-
+hello french Gregory 
+Hello FRENCH Gregory
+hello fReNcH Gregory
+hello french "Gregory Jones" 
+Hello FRENCH "Gregory Jones"
+hello fReNcH "Gregory Jones"
 
 # italian test (Success)
 hello italian # should say hello in italian
@@ -48,5 +57,11 @@ hello Gregory ItAlIaN
 hello "Gregory Jones" italian 
 Hello "Gregory Jones" ITALIAN
 hello "Gregory Jones" ItAlIaN
+hello italian Gregory 
+Hello ITALIAN Gregory
+hello ItAlIaN Gregory
+hello italian "Gregory Jones" 
+Hello ITALIAN "Gregory Jones"
+hello ItAlIaN "Gregory Jones"
 
 
