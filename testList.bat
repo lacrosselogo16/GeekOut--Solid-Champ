@@ -25,6 +25,7 @@ hello "Gregory Jones" English
 Hello "Gregory Jones" ENGLISH
 hello "Gregory Jones" english 
 hello "Gregory Jones" EnGlIsH
+hello English Gregory
 
 :: French test (Success)
 hello French 
@@ -39,6 +40,7 @@ hello "Gregory Jones" French
 Hello "Gregory Jones" FRENCH
 hello "Gregory Jones" french 
 hello "Gregory Jones" fReNcH
+hello French Gregory
 
 :: italian test (Success)
 hello Italian 
@@ -53,6 +55,7 @@ hello "Gregory Jones" Italian
 Hello "Gregory Jones" ITALIAN
 hello "Gregory Jones" italian 
 hello "Gregory Jones" ItAlIaN
+hello Italian Gregory
 
 :: Spanish test (Success)
 hello Spanish 
@@ -67,4 +70,5 @@ hello "Gregory Jones" Spanish
 Hello "Gregory Jones" SPANISH
 hello "Gregory Jones" spanish 
 hello "Gregory Jones" SpAnIsH
+hello Spanish Gregory
 
