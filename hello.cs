@@ -51,9 +51,17 @@ namespace blah
 
 			if(args.Length < 2)
 			{
-				if(args.Length == 1 && args[0].ToUpper() != "ENGLISH" 
-					&& args[0].ToUpper() != "FRENCH" && args[0].ToUpper() != "ITALIAN")
-				Console.WriteLine("Hello World!");
+				if( args.Length == 0 || 
+					(
+						args.Length == 1 
+						&& args[0].ToUpper() != "ENGLISH" 
+						&& args[0].ToUpper() != "FRENCH" 
+						&& args[0].ToUpper() != "ITALIAN"
+					)
+				)
+				{
+					Console.WriteLine("Hello World!");
+				}
 			}
     	}
 	}
