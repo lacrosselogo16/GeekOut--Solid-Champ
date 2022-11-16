@@ -1,6 +1,7 @@
 using System;
 namespace blah
 {
+	// Returns Name if specified and Hello World in many different language that you specify.
 	class Hello 
 	{       
 		/*
