@@ -11,10 +11,7 @@ namespace blah
 		*/  
 		static void Main(string[] args)
         {
-        	if(args.Length == 0)
-			{
-				Console.WriteLine("Hello World!");
-			}
+        	
 			if(args.Length > 0)
 			{
 				if(args[0].ToUpper() == "FRENCH")
@@ -49,6 +46,14 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
+
+			}
+
+			if(args.Length < 2)
+			{
+				if(args.Length == 1 && args[0].ToUpper() != "ENGLISH" 
+					&& args[0].ToUpper() != "FRENCH" && args[0].ToUpper() != "ITALIAN")
+				Console.WriteLine("Hello World!");
 			}
     	}
 	}
