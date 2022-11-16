@@ -1,4 +1,4 @@
-using System; // this is a test
+using System;
 namespace blah
 {
 	// Returns Name if specified and Hello World in many different language that you specify.
@@ -23,6 +23,10 @@ namespace blah
 				{
 					Console.WriteLine("Ciao Mondo!");
 				}
+				else if(args[0].ToUpper() == "SPANISH")
+				{
+					Console.WriteLine("Hola Mundo!");
+				}
 				else if(args[0].ToUpper() == "ENGLISH" || args[0] == "")
 				{
 					Console.WriteLine("Hello World!");
@@ -43,6 +47,10 @@ namespace blah
 				{
 					Console.WriteLine("Ciao Mondo!");
 				}
+				else if(args[1].ToUpper() == "SPANISH")
+				{
+					Console.WriteLine("Hola Mundo!");
+				}
 				else if(args[1].ToUpper() == "ENGLISH" || args[1] == "")
 				{
 					Console.WriteLine("Hello World!");
@@ -58,6 +66,7 @@ namespace blah
 						&& args[0].ToUpper() != "ENGLISH" 
 						&& args[0].ToUpper() != "FRENCH" 
 						&& args[0].ToUpper() != "ITALIAN"
+						&& args[0].ToUpper() != "SPANISH"
 					)
 				)
 				{
