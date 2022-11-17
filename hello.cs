@@ -4,12 +4,6 @@ namespace blah
 	// Returns Name if specified and Hello World in many different language that you specify.
 	class Hello 
 	{       
-		/*
-			want to test four conditions: no parameters, single parameter name, pass in string with spaces, languages none and french, 
-			defaults to english if unknown second parameter with name.
-
-			Example: hello Gregory French
-		*/  
 		static void Main(string[] args)
         {
         	// one parameter logic
@@ -56,10 +50,7 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
-				else if(args[0].ToUpper() != "ENGLISH"
-					&& args[0].ToUpper() != "FRENCH"
-					&& args[0].ToUpper() != "ITALIAN"
-					&& args[0].ToUpper() != "SPANISH")
+				else if(IsNotAnyLanguage(args[0]))
 				{
 					Console.WriteLine("Hello World!");
 				}
@@ -70,17 +61,24 @@ namespace blah
 			{
 				if( args.Length == 0 ||
 					(
-						args.Length == 1 
-						&& args[0].ToUpper() != "ENGLISH" 
-						&& args[0].ToUpper() != "FRENCH" 
-						&& args[0].ToUpper() != "ITALIAN"
-						&& args[0].ToUpper() != "SPANISH"
+						args.Length == 1 &&
+						IsNotAnyLanguage(args[0]) 
 					)
 				)
 				{
 					Console.WriteLine("Hello World!");
 				}
 			}
+    	}
+
+		static bool IsNotAnyLanguage(string language)
+    	{
+    		return (
+				language.ToUpper() != "ENGLISH" 
+				&& language.ToUpper() != "FRENCH" 
+				&& language.ToUpper() != "ITALIAN"
+				&& language.ToUpper() != "SPANISH"
+    		);
     	}
 	}
 }
