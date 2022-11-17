@@ -12,7 +12,7 @@ namespace blah
 		*/  
 		static void Main(string[] args)
         {
-        	
+        	// one parameter logic
 			if(args.Length > 0)
 			{
 				if(args[0].ToUpper() == "FRENCH")
@@ -37,6 +37,7 @@ namespace blah
 				}	
 			}
 
+			// two parameter logic
 			if(args.Length > 1)
 			{
 				if(args[1].ToUpper() == "FRENCH")
@@ -55,10 +56,14 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
-
+				else
+				{
+					Console.WriteLine("Hello World!");
+				}
 			}
 
-			if(args.Length < 2 || args.Length > 2)
+			// Not equal to 2 ege 3 or more or 1 or none
+			if(args.Length != 2)
 			{
 				if( args.Length == 0 ||
 					(
@@ -72,15 +77,15 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
-				else if(args.Length > 2
-						&& args[0].ToUpper() != "ENGLISH" 
-						&& args[0].ToUpper() != "FRENCH" 
-						&& args[0].ToUpper() != "ITALIAN"
-						&& args[0].ToUpper() != "SPANISH"
-					)
-				{
-					Console.WriteLine("Hello World!");
-				}
+				// else if(args.Length > 2
+				// 		&& args[1].ToUpper() != "ENGLISH" 
+				// 		&& args[1].ToUpper() != "FRENCH" 
+				// 		&& args[1].ToUpper() != "ITALIAN"
+				// 		&& args[1].ToUpper() != "SPANISH"
+				// 	)
+				// {
+				// 	Console.WriteLine("Hello World!");
+				// }
 			}
     	}
 	}
