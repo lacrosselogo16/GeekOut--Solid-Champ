@@ -56,7 +56,10 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
-				else
+				else if(args[0].ToUpper() != "ENGLISH"
+					&& args[0].ToUpper() != "FRENCH"
+					&& args[0].ToUpper() != "ITALIAN"
+					&& args[0].ToUpper() != "SPANISH")
 				{
 					Console.WriteLine("Hello World!");
 				}
@@ -77,15 +80,6 @@ namespace blah
 				{
 					Console.WriteLine("Hello World!");
 				}
-				// else if(args.Length > 2
-				// 		&& args[1].ToUpper() != "ENGLISH" 
-				// 		&& args[1].ToUpper() != "FRENCH" 
-				// 		&& args[1].ToUpper() != "ITALIAN"
-				// 		&& args[1].ToUpper() != "SPANISH"
-				// 	)
-				// {
-				// 	Console.WriteLine("Hello World!");
-				// }
 			}
     	}
 	}
