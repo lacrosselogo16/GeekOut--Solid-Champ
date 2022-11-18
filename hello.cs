@@ -6,53 +6,59 @@ namespace blah
 	{       
 		static void Main(string[] args)
         {
+        	string value1 = "";
+        	string upperValue1 = "";
+        	string value2 = "";
+        	string upperValue2 = "";
+
+        	if(args.Length > 0)
+        	{
+        		value1 = args[0];
+        		upperValue1 = value1.ToUpper();
+        		if(args.Length > 1)
+        		{
+        			value2 = args[1];
+        			upperValue2 = value2.ToUpper();
+        		}
+        	}
+        	DisplayInitialGreeting(value1, value2);
+
         	// one parameter logic
-			if(args.Length > 0)
+			if(upperValue1 == "FRENCH")
 			{
-				if(args[0].ToUpper() == "FRENCH")
-				{
-					Console.WriteLine("Bonjour le monde!");
-				}
-				else if(args[0].ToUpper() == "ITALIAN")
-				{
-					Console.WriteLine("Ciao Mondo!");
-				}
-				else if(args[0].ToUpper() == "SPANISH")
-				{
-					Console.WriteLine("Hola Mundo!");
-				}
-				else if(args[0].ToUpper() == "ENGLISH" || args[0] == "")
-				{
-					Console.WriteLine("Hello World!");
-				}
-				else
-				{
-					Console.WriteLine(args[0]);
-				}	
+				Console.WriteLine("Bonjour le monde!");
+			}
+			else if(upperValue1 == "ITALIAN")
+			{
+				Console.WriteLine("Ciao Mondo!");
+			}
+			else if(upperValue1 == "SPANISH")
+			{
+				Console.WriteLine("Hola Mundo!");
+			}
+			else if(upperValue1 == "ENGLISH")
+			{
+				DisplayEnglishGreeting();
 			}
 
 			// two parameter logic
-			if(args.Length > 1)
+			if(IsNotAnyLanguage(value1))
 			{
-				if(args[1].ToUpper() == "FRENCH")
+				if(upperValue2 == "FRENCH")
 				{
 					Console.WriteLine("Bonjour le monde!");
 				}
-				else if(args[1].ToUpper() == "ITALIAN")
+				else if(upperValue2 == "ITALIAN")
 				{
 					Console.WriteLine("Ciao Mondo!");
 				}
-				else if(args[1].ToUpper() == "SPANISH")
+				else if(upperValue2 == "SPANISH")
 				{
 					Console.WriteLine("Hola Mundo!");
 				}
-				else if(args[1].ToUpper() == "ENGLISH" || args[1] == "")
+				else if(upperValue2 == "ENGLISH")
 				{
-					Console.WriteLine("Hello World!");
-				}
-				else if(IsNotAnyLanguage(args[0]))
-				{
-					Console.WriteLine("Hello World!");
+					DisplayEnglishGreeting();
 				}
 			}
 
@@ -62,11 +68,11 @@ namespace blah
 				if( args.Length == 0 ||
 					(
 						args.Length == 1 &&
-						IsNotAnyLanguage(args[0]) 
+						IsNotAnyLanguage(value1) 
 					)
 				)
 				{
-					Console.WriteLine("Hello World!");
+					DisplayDefaultGreeting();
 				}
 			}
     	}
@@ -86,6 +92,31 @@ namespace blah
 			// 	|| language.ToUpper() == "ITALIAN"
 			// 	|| language.ToUpper() == "SPANISH"
     		// );
+    	}
+
+    	static void DisplayInitialGreeting(string val1, string val2)
+    	{
+    		if(IsNotAnyLanguage(val1))
+        	{
+	        	if(val1 != "")
+	        	{
+	        		Console.WriteLine(val1);
+	        	}
+	        	if(val2 != "" && IsNotAnyLanguage(val2))
+	        	{
+	        		DisplayDefaultGreeting();	
+	        	}
+        	}
+    	}
+
+    	static void DisplayDefaultGreeting()
+    	{
+			DisplayEnglishGreeting();
+    	}
+    	
+    	static void DisplayEnglishGreeting()
+    	{
+			Console.WriteLine("Hello World!");
     	}
 	}
 }
