@@ -7,29 +7,25 @@ namespace blah
 		static void Main(string[] args)
         {
         	string value1 = "";
-        	string upperValue1 = "";
         	string value2 = "";
-        	string upperValue2 = "";
 
         	if(args.Length > 0)
         	{
         		value1 = args[0];
-        		upperValue1 = value1.ToUpper();
         		if(args.Length > 1)
         		{
         			value2 = args[1];
-        			upperValue2 = value2.ToUpper();
         		}
         	}
         	DisplayInitialGreeting(value1, value2);
 
         	// one parameter logic
-			DisplayGreetingByLanguage(upperValue1);
+			DisplayGreetingByLanguage(value1);
 
 			// two parameter logic
 			if(IsNotAnyLanguage(value1))
 			{
-				DisplayGreetingByLanguage(upperValue2);
+				DisplayGreetingByLanguage(value2);
 			}
 
 			// Not equal to 2 ege 3 or more or 1 or none
@@ -49,6 +45,7 @@ namespace blah
 
     	static void DisplayGreetingByLanguage(string language)
     	{
+    		language = language.ToUpper();
     		if(language == "FRENCH")
 			{
 				Console.WriteLine("Bonjour le monde!");
@@ -65,15 +62,22 @@ namespace blah
 			{
 				DisplayEnglishGreeting();
 			}
+			else if(language == "JAPANESE")
+			{
+				Console.WriteLine("こんにちは世界");
+			}
     	}
 
 		static bool IsNotAnyLanguage(string language)
     	{
+    		language = language.ToUpper();
+
     		return (
-				language.ToUpper() != "ENGLISH" 
-				&& language.ToUpper() != "FRENCH" 
-				&& language.ToUpper() != "ITALIAN"
-				&& language.ToUpper() != "SPANISH"
+				language != "ENGLISH" 
+				&& language != "FRENCH" 
+				&& language != "ITALIAN"
+				&& language != "SPANISH"
+				&& language != "JAPANESE"
     		);
 
     		// return !(

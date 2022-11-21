@@ -63,6 +63,7 @@ hello Italian Gregory
 hello Gregory Italian blah blah blah 
 hello Italian Gregory blah blah blah 
 
+
 :: Spanish test (Success)
 hello Spanish 
 Hello SPANISH
@@ -80,23 +81,50 @@ hello Spanish Gregory
 hello Gregory Spanish blah blah blah 
 hello Spanish Gregory blah blah blah 
 
+:: Japanese test (Success)
+hello Japanese 
+Hello JAPANESE
+hello japanese
+hello JaPaNeSe
+hello Gregory Japanese 
+Hello Gregory JAPANESE
+hello Gregory japanese 
+hello Gregory JaPaNeSe
+hello "Gregory Jones" Japanese 
+Hello "Gregory Jones" JAPANESE
+hello "Gregory Jones" japanese 
+hello "Gregory Jones" JaPaNeSe
+hello Japanese Gregory
+hello Gregory Japanese blah blah blah 
+hello Japanese Gregory blah blah blah
+
 :: MultiLanguage Test (Success)
 hello English English
 hello English French
 hello English Italian
 hello English Spanish
+hello English Japanese
 
 hello French English
 hello French French
 hello French Italian
 hello French Spanish
+hello French Japanese
 
 hello Italian English
 hello Italian French
 hello Italian Italian
 hello Italian Spanish
+hello Italian Japanese
 
 hello Spanish English
 hello Spanish French
 hello Spanish Italian
 hello Spanish Spanish
+hello Spanish Japanese
+
+hello Japanese English
+hello Japanese French
+hello Japanese Italian
+hello Japanese Spanish
+hello Japanese Japanese
