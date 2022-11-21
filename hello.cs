@@ -29,17 +29,9 @@ namespace blah
 			}
 
 			// Not equal to 2 ege 3 or more or 1 or none
-			if(args.Length != 2)
+			if(args.Length != 2 && ( args.Length == 0 || ( args.Length == 1 && IsNotAnyLanguage(value1))))
 			{
-				if( args.Length == 0 ||
-					(
-						args.Length == 1 &&
-						IsNotAnyLanguage(value1) 
-					)
-				)
-				{
-					DisplayDefaultGreeting();
-				}
+				DisplayDefaultGreeting();
 			}
     	}
 
