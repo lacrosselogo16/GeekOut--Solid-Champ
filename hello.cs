@@ -26,6 +26,10 @@ namespace blah
 				DisplayDefaultGreeting();
 			}
     	}
+    	static void Intialize(string[] args, ref string v, string v2)
+    	{
+
+    	}
     	static void Intialize(string[] args, ref string value1, ref string value2)
     	{
     		
