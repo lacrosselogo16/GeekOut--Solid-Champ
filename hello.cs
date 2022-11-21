@@ -24,42 +24,12 @@ namespace blah
         	DisplayInitialGreeting(value1, value2);
 
         	// one parameter logic
-			if(upperValue1 == "FRENCH")
-			{
-				Console.WriteLine("Bonjour le monde!");
-			}
-			else if(upperValue1 == "ITALIAN")
-			{
-				Console.WriteLine("Ciao Mondo!");
-			}
-			else if(upperValue1 == "SPANISH")
-			{
-				Console.WriteLine("Hola Mundo!");
-			}
-			else if(upperValue1 == "ENGLISH")
-			{
-				DisplayEnglishGreeting();
-			}
+			DisplayGreetingByLanguage(upperValue1);
 
 			// two parameter logic
 			if(IsNotAnyLanguage(value1))
 			{
-				if(upperValue2 == "FRENCH")
-				{
-					Console.WriteLine("Bonjour le monde!");
-				}
-				else if(upperValue2 == "ITALIAN")
-				{
-					Console.WriteLine("Ciao Mondo!");
-				}
-				else if(upperValue2 == "SPANISH")
-				{
-					Console.WriteLine("Hola Mundo!");
-				}
-				else if(upperValue2 == "ENGLISH")
-				{
-					DisplayEnglishGreeting();
-				}
+				DisplayGreetingByLanguage(upperValue2);
 			}
 
 			// Not equal to 2 ege 3 or more or 1 or none
@@ -74,6 +44,26 @@ namespace blah
 				{
 					DisplayDefaultGreeting();
 				}
+			}
+    	}
+
+    	static void DisplayGreetingByLanguage(string language)
+    	{
+    		if(language == "FRENCH")
+			{
+				Console.WriteLine("Bonjour le monde!");
+			}
+			else if(language == "ITALIAN")
+			{
+				Console.WriteLine("Ciao Mondo!");
+			}
+			else if(language == "SPANISH")
+			{
+				Console.WriteLine("Hola Mundo!");
+			}
+			else if(language == "ENGLISH")
+			{
+				DisplayEnglishGreeting();
 			}
     	}
 
@@ -113,7 +103,7 @@ namespace blah
     	{
 			DisplayEnglishGreeting();
     	}
-    	
+
     	static void DisplayEnglishGreeting()
     	{
 			Console.WriteLine("Hello World!");
