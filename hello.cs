@@ -3,13 +3,15 @@ namespace blah
 {
 	// Returns Name if specified and Hello World in many different language that you specify.
 	class Hello 
-	{       
+	{
+		static string value1 = "";
+    	static string value2 = "";
+
 		static void Main(string[] args)
         {
-        	string value1 = "";
-        	string value2 = "";
+        	
 
-        	Intialize(args, ref value1, ref value2);	
+        	Intialize(args);	
 
         	// one parameter logic
 			DisplayGreetingByLanguage(value1);
@@ -26,11 +28,8 @@ namespace blah
 				DisplayDefaultGreeting();
 			}
     	}
-    	static void Intialize(string[] args, ref string v, string v2)
-    	{
 
-    	}
-    	static void Intialize(string[] args, ref string value1, ref string value2)
+    	static void Intialize(string[] args)
     	{
     		
         	if(args.Length > 0)

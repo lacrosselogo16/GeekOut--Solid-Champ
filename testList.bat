@@ -11,7 +11,7 @@ Hello "Gregory Jones" blahblah
 Hello Gregory
 Hello "Gregory Jones" 
 Hello
-
+echo ------------------------------------
 :: English test (Success)
 hello English  
 Hello ENGLISH
