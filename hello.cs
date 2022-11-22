@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 namespace blah
 {
 	// Returns Name if specified and Hello World in many different language that you specify.
@@ -9,9 +10,14 @@ namespace blah
     	// static string _name = "";
     	// static string _language = "";
     	// static string _greeting = "";
-    	static readonly string[] _languages = {"ENGLISH", "FRENCH", "ITALIAN", "SPANISH", "JAPANESE", "CHINESE"};
-    	static readonly string[] _greetings = {"Hello World!", "Bonjour le monde!", "Ciao Mondo!", "Hola Mundo!", "こんにちは世界", "你好世界"};
-
+    	static readonly Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
+    		{"ENGLISH", "Hello World!"}
+    		,{"FRENCH", "Bonjour le monde!"}
+    		,{"ITALIAN", "Ciao Mondo!"}
+    		,{"SPANISH", "Hola Mundo!"}
+    		,{"JAPANESE", "こんにちは世界"}
+    		,{"CHINESE", "你好世界"}
+    	};
 		static void Main(string[] args)
         {
         	Intialize(args);	
@@ -58,13 +64,14 @@ namespace blah
 
     	static void DisplayLanguageGreeting(string language)
     	{
-    		for(int index = 0; index < _languages.Length; index++)
+    		try
     		{
-    			if(language.ToUpper() == _languages[index])
-				{
-					Console.WriteLine(_greetings[index]);
-				}
-    		}	
+    			Console.WriteLine(_mapGreetings[language.ToUpper()]);
+    		}
+    		catch
+    		{
+    			Console.WriteLine(_mapGreetings["ENGLISH"]);
+    		}
     	}
 
     	static bool ShouldDisplayDefaultGreeting(string[] args)
