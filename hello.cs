@@ -75,14 +75,14 @@ namespace blah
 		static bool IsNotAnyLanguage(string language)
     	{
     		language = language.ToUpper();
-
-    		return (
-				language != "ENGLISH" 
-				&& language != "FRENCH" 
-				&& language != "ITALIAN"
-				&& language != "SPANISH"
-				&& language != "JAPANESE"
-    		);
+    		for(int index = 0; index < _languages.Length; index++)
+    		{
+    			if(language == _languages[index])
+				{
+					return false;
+				}
+    		}
+			return true;
     	}
 
     	static void DisplayInitialGreeting(string val1, string val2)
