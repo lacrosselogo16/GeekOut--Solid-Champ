@@ -6,11 +6,14 @@ namespace blah
 	{
 		static string value1 = "";
     	static string value2 = "";
+    	static string _name = "";
+    	static string _language = "";
+    	static string _greeting = "";
+    	static readonly string[] _languages = {"ENGLISH", "FRENCH", "ITALIAN", "SPANISH", "JAPANESE"};
 
 		static void Main(string[] args)
         {
-        	
-
+        	DisplayLanguages();
         	Intialize(args);	
 
         	// one parameter logic
@@ -42,6 +45,17 @@ namespace blah
         	}
         	DisplayInitialGreeting(value1, value2);
     	}
+
+    	static void DisplayLanguages()
+    	{
+    		for(int index = 0; index < _languages.Length;)
+    		{
+    			Console.WriteLine(index);	
+    			Console.WriteLine(_languages[index]);
+    			index = index + 1;
+    		}
+    	}
+
     	static bool ShouldDisplayDefaultGreeting(string[] args)
     	{
     		return (args.Length != 2 && ( args.Length == 0 || ( args.Length == 1 && IsNotAnyLanguage(args[0]))));
@@ -83,13 +97,6 @@ namespace blah
 				&& language != "SPANISH"
 				&& language != "JAPANESE"
     		);
-
-    		// return !(
-			// 	language.ToUpper() == "ENGLISH" 
-			// 	|| language.ToUpper() == "FRENCH" 
-			// 	|| language.ToUpper() == "ITALIAN"
-			// 	|| language.ToUpper() == "SPANISH"
-    		// );
     	}
 
     	static void DisplayInitialGreeting(string val1, string val2)
