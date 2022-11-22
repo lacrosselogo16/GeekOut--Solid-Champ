@@ -48,11 +48,10 @@ namespace blah
 
     	static void DisplayLanguages()
     	{
-    		for(int index = 0; index < _languages.Length;)
+    		for(int index = 0; index < _languages.Length; index++)
     		{
     			Console.WriteLine(index);	
     			Console.WriteLine(_languages[index]);
-    			index = index + 1;
     		}
     	}
 
