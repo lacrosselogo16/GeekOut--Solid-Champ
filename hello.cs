@@ -6,23 +6,23 @@ namespace blah
 	{
 		static string value1 = "";
     	static string value2 = "";
-    	static string _name = "";
-    	static string _language = "";
-    	static string _greeting = "";
-    	static readonly string[] _languages = {"ENGLISH", "FRENCH", "ITALIAN", "SPANISH", "JAPANESE"};
+    	// static string _name = "";
+    	// static string _language = "";
+    	// static string _greeting = "";
+    	static readonly string[] _languages = {"ENGLISH", "FRENCH", "ITALIAN", "SPANISH", "JAPANESE", "CHINESE"};
+    	static readonly string[] _greetings = {"Hello World!", "Bonjour le monde!", "Ciao Mondo!", "Hola Mundo!", "こんにちは世界", "你好世界"};
 
 		static void Main(string[] args)
         {
-        	DisplayLanguages();
         	Intialize(args);	
 
         	// one parameter logic
-			DisplayGreetingByLanguage(value1);
+			DisplayLanguageGreeting(value1);
 
 			// two parameter logic
 			if(IsNotAnyLanguage(value1))
 			{
-				DisplayGreetingByLanguage(value2);
+				DisplayLanguageGreeting(value2);
 			}
 
 			// Not equal to 2 ege 3 or more or 1 or none
@@ -50,39 +50,26 @@ namespace blah
     	{
     		for(int index = 0; index < _languages.Length; index++)
     		{
-    			Console.WriteLine(index);	
-    			Console.WriteLine(_languages[index]);
+    			Console.Write(_languages[index]);
+    			Console.Write(" ");
+    			Console.WriteLine(_greetings[index]);
     		}
+    	}
+
+    	static void DisplayLanguageGreeting(string language)
+    	{
+    		for(int index = 0; index < _languages.Length; index++)
+    		{
+    			if(language.ToUpper() == _languages[index])
+				{
+					Console.WriteLine(_greetings[index]);
+				}
+    		}	
     	}
 
     	static bool ShouldDisplayDefaultGreeting(string[] args)
     	{
     		return (args.Length != 2 && ( args.Length == 0 || ( args.Length == 1 && IsNotAnyLanguage(args[0]))));
-    	}
-
-    	static void DisplayGreetingByLanguage(string language)
-    	{
-    		language = language.ToUpper();
-    		if(language == "FRENCH")
-			{
-				Console.WriteLine("Bonjour le monde!");
-			}
-			else if(language == "ITALIAN")
-			{
-				Console.WriteLine("Ciao Mondo!");
-			}
-			else if(language == "SPANISH")
-			{
-				Console.WriteLine("Hola Mundo!");
-			}
-			else if(language == "ENGLISH")
-			{
-				DisplayEnglishGreeting();
-			}
-			else if(language == "JAPANESE")
-			{
-				Console.WriteLine("こんにちは世界");
-			}
     	}
 
 		static bool IsNotAnyLanguage(string language)

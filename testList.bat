@@ -98,33 +98,62 @@ hello Japanese Gregory
 hello Gregory Japanese blah blah blah 
 hello Japanese Gregory blah blah blah
 
+:: Chinese test (Success)
+hello Chinese 
+Hello CHINESE
+hello chinese
+hello ChInEsE
+hello Gregory Chinese 
+Hello Gregory CHINESE
+hello Gregory chinese 
+hello Gregory ChInEsE
+hello "Gregory Jones" Chinese 
+Hello "Gregory Jones" CHINESE
+hello "Gregory Jones" chinese 
+hello "Gregory Jones" ChInEsE
+hello Chinese Gregory
+hello Gregory Chinese blah blah blah 
+hello Chinese Gregory blah blah blah
+
 :: MultiLanguage Test (Success)
 hello English English
 hello English French
 hello English Italian
 hello English Spanish
 hello English Japanese
+hello English Chinese
 
 hello French English
 hello French French
 hello French Italian
 hello French Spanish
 hello French Japanese
+hello French Chinese
 
 hello Italian English
 hello Italian French
 hello Italian Italian
 hello Italian Spanish
 hello Italian Japanese
+hello Italian Chinese
 
 hello Spanish English
 hello Spanish French
 hello Spanish Italian
 hello Spanish Spanish
 hello Spanish Japanese
+hello Spanish Chinese
 
 hello Japanese English
 hello Japanese French
 hello Japanese Italian
 hello Japanese Spanish
 hello Japanese Japanese
+hello Japanese Chinese
+
+hello Chinese English
+hello Chinese French
+hello Chinese Italian
+hello Chinese Spanish
+hello Chinese Japanese
+hello Chinese Chinese
