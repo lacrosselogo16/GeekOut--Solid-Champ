@@ -10,16 +10,22 @@ namespace blah
     	// static string _name = "";
     	// static string _language = "";
     	// static string _greeting = "";
-    	static readonly Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
-    		{"ENGLISH", "Hello World!"}
-    		,{"FRENCH", "Bonjour le monde!"}
-    		,{"ITALIAN", "Ciao Mondo!"}
-    		,{"SPANISH", "Hola Mundo!"}
-    		,{"JAPANESE", "こんにちは世界"}
-    		,{"CHINESE", "你好世界"}
-    	};
+    	
+    	static Dictionary<string,string> _mapGreetings; 
+    	// = new Dictionary<string,string>{
+    	// 	{"ENGLISH", "Hello World!"}
+    	// 	,{"FRENCH", "Bonjour le monde!"}
+    	// 	,{"ITALIAN", "Ciao Mondo!"}
+    	// 	,{"SPANISH", "Hola Mundo!"}
+    	// 	,{"JAPANESE", "こんにちは世界"}
+    	// 	,{"CHINESE", "你好世界"}
+    	// };
+
 		static void Main(string[] args)
         {
+        	_mapGreetings= new Dictionary<string,string>();
+        	_mapGreetings.Add("ENGLISH", "Hello World!");
+        	_mapGreetings.Add("ENGLISH", "BLAH!!!");
         	Intialize(args);	
 
         	// one parameter logic
@@ -52,15 +58,15 @@ namespace blah
         	DisplayInitialGreeting(value1, value2);
     	}
 
-    	static void DisplayLanguages()
-    	{
-    		for(int index = 0; index < _languages.Length; index++)
-    		{
-    			Console.Write(_languages[index]);
-    			Console.Write(" ");
-    			Console.WriteLine(_greetings[index]);
-    		}
-    	}
+    	// static void DisplayLanguages()
+    	// {
+    	// 	for(int index = 0; index < _languages.Length; index++)
+    	// 	{
+    	// 		Console.Write(_languages[index]);
+    	// 		Console.Write(" ");
+    	// 		Console.WriteLine(_greetings[index]);
+    	// 	}
+    	// }
 
     	static void DisplayLanguageGreeting(string language)
     	{
@@ -79,19 +85,20 @@ namespace blah
     		return (args.Length != 2 && ( args.Length == 0 || ( args.Length == 1 && IsNotAnyLanguage(args[0]))));
     	}
 
+    	//check if string is NOT a mapped language.
 		static bool IsNotAnyLanguage(string language)
     	{
-    		language = language.ToUpper();
-    		for(int index = 0; index < _languages.Length; index++)
+    		try
     		{
-    			if(language == _languages[index])
-				{
-					return false;
-				}
+    			var message = _mapGreetings[language.ToUpper()];
+    			return false;
     		}
-			return true;
+    		catch
+    		{
+    			return true;
+    		}
     	}
-
+    		
     	static void DisplayInitialGreeting(string val1, string val2)
     	{
     		if(IsNotAnyLanguage(val1))
