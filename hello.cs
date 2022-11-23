@@ -12,32 +12,46 @@ namespace blah
 
 		static void Main(string[] args)
         {
-        	Intialize(args);	
+        	DetermineGreeting(args);	
+        	DetermineName(args);	
         	DisplayGreeting();
     	}
 
-    	static void Intialize(string[] args)
+    	static void DetermineGreeting(string[] args)
     	{
     		if(args.Length > 0)
     		{
     			if(IsAMappedLanguage(args[0]))
     			{
-
+    				_greeting = _mapGreetings[args[0].ToUpper()];
     			}
     			else
     			{
-    				_name = args[0];
     				if(args.Length > 1 && IsAMappedLanguage(args[1]))
     				{
-
+    					_greeting = _mapGreetings[args[1].ToUpper()];
     				}
     			}
     		}
     	}
 
+		static void DetermineName(string[] args)
+    	{
+    		_name = IsNameAvailable(args)? args[0]:"";
+    	}
+
+    	static bool IsNameAvailable(string[] args)
+    	{
+    		return args.Length > 0 && !IsAMappedLanguage(args[0]);
+    	}
+
+
     	static void DisplayGreeting()
     	{
-    		Console.WriteLine(_name);
+    		if(_name != "")
+    		{
+    			Console.WriteLine(_name);
+    		}
     		Console.WriteLine(_greeting);
     	}
 
@@ -45,7 +59,7 @@ namespace blah
     	{
     		try
     		{
-    			_greeting = _mapGreetings[language.ToUpper()];
+    			var a = _mapGreetings[language.ToUpper()];
     			return true;
     		}
     		catch
