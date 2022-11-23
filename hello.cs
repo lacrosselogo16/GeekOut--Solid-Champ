@@ -11,21 +11,18 @@ namespace blah
     	// static string _language = "";
     	// static string _greeting = "";
     	
-    	static Dictionary<string,string> _mapGreetings; 
-    	// = new Dictionary<string,string>{
-    	// 	{"ENGLISH", "Hello World!"}
-    	// 	,{"FRENCH", "Bonjour le monde!"}
-    	// 	,{"ITALIAN", "Ciao Mondo!"}
-    	// 	,{"SPANISH", "Hola Mundo!"}
-    	// 	,{"JAPANESE", "こんにちは世界"}
-    	// 	,{"CHINESE", "你好世界"}
-    	// };
+    	static Dictionary<string,string> _mapGreetings 
+    	= new Dictionary<string,string>{
+    		{"ENGLISH", "Hello World!"}
+    		,{"FRENCH", "Bonjour le monde!"}
+    		,{"ITALIAN", "Ciao Mondo!"}
+    		,{"SPANISH", "Hola Mundo!"}
+    		,{"JAPANESE", "こんにちは世界"}
+    		,{"CHINESE", "你好世界"}
+    	};
 
 		static void Main(string[] args)
         {
-        	_mapGreetings= new Dictionary<string,string>();
-        	_mapGreetings.Add("ENGLISH", "Hello World!");
-        	_mapGreetings.Add("ENGLISH", "BLAH!!!");
         	Intialize(args);	
 
         	// one parameter logic
