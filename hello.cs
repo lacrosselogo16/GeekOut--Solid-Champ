@@ -18,21 +18,15 @@ namespace blah
     	}
 
     	static void DetermineGreeting(string[] args)
+    	{ 
+    		_greeting = IsValidGreeting(args, 0)?_mapGreetings[args[0].ToUpper()]
+    		:IsValidGreeting(args, 1)?_mapGreetings[args[1].ToUpper()]
+    		:_greeting;
+    	}
+
+    	static bool IsValidGreeting(string[] args, int index)
     	{
-    		if(args.Length > 0)
-    		{
-    			if(IsAMappedLanguage(args[0]))
-    			{
-    				_greeting = _mapGreetings[args[0].ToUpper()];
-    			}
-    			else
-    			{
-    				if(args.Length > 1 && IsAMappedLanguage(args[1]))
-    				{
-    					_greeting = _mapGreetings[args[1].ToUpper()];
-    				}
-    			}
-    		}
+    		return (args.Length > index && IsAMappedLanguage(args[index]));
     	}
 
 		static void DetermineName(string[] args)
@@ -44,7 +38,6 @@ namespace blah
     	{
     		return args.Length > 0 && !IsAMappedLanguage(args[0]);
     	}
-
 
     	static void DisplayGreeting()
     	{
