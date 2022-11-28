@@ -1,64 +1,63 @@
+//to compile: csc .\hello.cs, .\Greeting.cs
 using System;
-using System.Collections.Generic;
+
 namespace blah
 {
 	// Returns Name if specified and Hello World in many different language that you specify.
 	class Hello 
 	{
-    	static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{{"ENGLISH", "Hello World!"},{"FRENCH", "Bonjour le monde!"},{"ITALIAN", "Ciao Mondo!"},{"SPANISH", "Hola Mundo!"},{"JAPANESE", "こんにちは世界"},{"CHINESE", "你好世界"}};
-    	static string _name = "";
-    	static string _greeting = _mapGreetings["ENGLISH"];
-    	
-
 		static void Main(string[] args)
         {
-        	DetermineGreeting(args);	
-        	DetermineName(args);	
-        	DisplayGreeting();
+        	Greeting myInstance;
+        	myInstance = new Greeting(args);
+        	// myInstance.DisplayGreeting();
+
+        	Greeting myInstance2;
+        	myInstance2 = new Greeting(args);
+        	// myInstance2.DisplayGreeting();
+
+
+        	// int a = 5;
+
+
+        	// Console.WriteLine(a);
+        	// Blah2(a);
+        	// Blah(ref a);
+        	// Console.WriteLine(a);
+			
+			// Console.WriteLine(myInstance.X);
+        	// Blah2(myInstance.X);
+        	// Blah(ref myInstance.X);
+        	// Console.WriteLine(myInstance.X);
+
+        	Console.WriteLine(myInstance2.X);
+        	Blah3(myInstance2);
+        	Console.WriteLine(myInstance2.X);
+
     	}
 
-    	static void DetermineGreeting(string[] args)
-    	{ 
-    		_greeting = IsValidGreeting(args, 0)?_mapGreetings[args[0].ToUpper()]
-    		:IsValidGreeting(args, 1)?_mapGreetings[args[1].ToUpper()]
-    		:_greeting;
-    	}
-
-    	static bool IsValidGreeting(string[] args, int index)
+    	private static void Blah(ref int x)
     	{
-    		return (args.Length > index && IsAMappedLanguage(args[index]));
+    		Console.WriteLine(x);
+
+    		x = 10;
+    		Console.WriteLine(x);
     	}
 
-		static void DetermineName(string[] args)
+    	private static void Blah2(int x)
     	{
-    		_name = IsNameAvailable(args)? args[0]:"";
-    	}
+    		Console.WriteLine(x);
 
-    	static bool IsNameAvailable(string[] args)
-    	{
-    		return args.Length > 0 && !IsAMappedLanguage(args[0]);
+    		x = 10;
+    		Console.WriteLine(x);
     	}
-
-    	static void DisplayGreeting()
+	    private static void Blah3(Greeting blah)
     	{
-    		if(_name != "")
-    		{
-    			Console.WriteLine(_name);
-    		}
-    		Console.WriteLine(_greeting);
-    	}
+    		Console.WriteLine("Blah3");
+    		Console.WriteLine(blah.X);
 
-		static bool IsAMappedLanguage(string language)
-    	{
-    		try
-    		{
-    			var a = _mapGreetings[language.ToUpper()];
-    			return true;
-    		}
-    		catch
-    		{
-    			return false;
-    		}
+    		blah.X = 10;
+    		Console.WriteLine(blah.X);
     	}
 	}
 }
