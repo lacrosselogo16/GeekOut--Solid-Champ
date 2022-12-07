@@ -1,0 +1,25 @@
+Variables types:
+1.value type: Int, decimal, anything other then object. 
+2.Reference type: is an object
+
+how arguments are passed into a function:
+1.passed in by reference
+2.passed in by value
+
+..........................................
+
+1.example of value type variable passed by value
+
+2.example of value type variable passed by reference
+
+3.example of reference type variable passed by value (change property within function.)
+
+4.example of reference type variable passed by reference(change property within function.)
+
+5.example of reference type properity passed value (same as 1. where properity is value type )
+
+6.example of reference type variable passed by reference (same as 2. where properity is value type)
+
+7.example of reference type variable passed by value (change object within function.)
+
+8.example of reference type variable passed by reference(change object within function.)
