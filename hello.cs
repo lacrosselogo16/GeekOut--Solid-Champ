@@ -8,56 +8,31 @@ namespace blah
 	{
 		static void Main(string[] args)
         {
-        	Greeting myInstance;
-        	myInstance = new Greeting(args);
-        	// myInstance.DisplayGreeting();
 
-        	Greeting myInstance2;
-        	myInstance2 = new Greeting(args);
-        	// myInstance2.DisplayGreeting();
+        	if(args != null && args.Length > 0 && args[0].ToLower() == "help")
+        	{
+        		Console.WriteLine("Input <Name> <Language>\n");
+        		Console.WriteLine("Example:");
+        		Console.WriteLine("\tHello");
+        		Console.WriteLine("\tHello Tiffany");
+        		Console.WriteLine("\tHello Tiffany French");
+        		Console.WriteLine("\tHello French");
+        		Console.WriteLine("\tHello help\n");
+        		Console.WriteLine("Listed Active Languages:");
+        		var a = new Greeting(args);
+        		foreach(var greeting in a.Greetings)
+        		{
+        			Console.WriteLine("\t{0}", greeting.Key);
+        		}
 
+        	}
+        	else
+        	{
+	        	Greeting myInstance;
+	        	myInstance = new Greeting(args);
+	        	myInstance.DisplayGreeting();
 
-        	// int a = 5;
-
-
-        	// Console.WriteLine(a);
-        	// Blah2(a);
-        	// Blah(ref a);
-        	// Console.WriteLine(a);
-			
-			// Console.WriteLine(myInstance.X);
-        	// Blah2(myInstance.X);
-        	// Blah(ref myInstance.X);
-        	// Console.WriteLine(myInstance.X);
-
-        	Console.WriteLine(myInstance2.X);
-        	Blah3(myInstance2);
-        	Console.WriteLine(myInstance2.X);
-
-    	}
-
-    	private static void Blah(ref int x)
-    	{
-    		Console.WriteLine(x);
-
-    		x = 10;
-    		Console.WriteLine(x);
-    	}
-
-    	private static void Blah2(int x)
-    	{
-    		Console.WriteLine(x);
-
-    		x = 10;
-    		Console.WriteLine(x);
-    	}
-	    private static void Blah3(Greeting blah)
-    	{
-    		Console.WriteLine("Blah3");
-    		Console.WriteLine(blah.X);
-
-    		blah.X = 10;
-    		Console.WriteLine(blah.X);
+        	}
     	}
 	}
 }

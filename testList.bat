@@ -11,7 +11,10 @@ Hello "Gregory Jones" blahblah
 Hello Gregory
 Hello "Gregory Jones" 
 Hello
-echo ------------------------------------
+
+:: Help menu test (Success)
+hello help
+
 :: English test (Success)
 hello English  
 Hello ENGLISH
@@ -157,3 +160,4 @@ hello Chinese Italian
 hello Chinese Spanish
 hello Chinese Japanese
 hello Chinese Chinese
+

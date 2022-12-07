@@ -5,11 +5,26 @@ namespace blah
 {
 	internal class Greeting
 	{
-		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{{"ENGLISH", "Hello World!"},{"FRENCH", "Bonjour le monde!"},{"ITALIAN", "Ciao Mondo!"},{"SPANISH", "Hola Mundo!"},{"JAPANESE", "こんにちは世界"},{"CHINESE", "你好世界"}};
+		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
+			{"ENGLISH", "Hello World!"},
+			{"FRENCH", "Bonjour le monde!"},
+			{"ITALIAN", "Ciao Mondo!"},
+			{"SPANISH", "Hola Mundo!"},
+			{"JAPANESE", "こんにちは世界"},
+			{"CHINESE", "你好世界"}
+		};
+
     	private string _name = "";
     	private string _greeting = _mapGreetings["ENGLISH"];
     	public int X = 5;
 
+    	public Dictionary<string,string> Greetings 
+    	{
+    		get
+    		{
+    			return _mapGreetings;
+    		}
+    	}
     	public Greeting(string[] args)
     	{
     		DetermineGreeting(args);	
