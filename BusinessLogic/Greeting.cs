@@ -1,9 +1,10 @@
+//csc /target:library /out:BusinessLogic.dll .\BusinessLogic\Greeting.cs
 using System;
 using System.Collections.Generic;
 
-namespace blah
+namespace HelloWorldProgram.BusinessLogic
 {
-	internal class Greeting
+	public class Greeting
 	{
 		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
 			{"ENGLISH", "Hello World!"},

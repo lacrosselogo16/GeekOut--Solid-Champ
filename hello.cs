@@ -1,7 +1,9 @@
 //to compile: csc .\hello.cs, .\Greeting.cs
+//csc .\hello.cs -r:.\BusinessLogic.dll
 using System;
+using HelloWorldProgram.BusinessLogic;
 
-namespace blah
+namespace HelloWorldProgram
 {
 	// Returns Name if specified and Hello World in many different language that you specify.
 	class Hello 
