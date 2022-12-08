@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace HelloWorldProgram.BusinessLogic
 {
-	public class Greeting
+	internal class Greeting //TODO: add factory
 	{
 		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
 			{"ENGLISH", "Hello World!"},
