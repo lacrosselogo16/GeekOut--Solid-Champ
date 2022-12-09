@@ -1,3 +1,4 @@
+using System;
 using HelloWorldProgram.BusinessLogic;
 
 namespace HelloWorldProgram
@@ -6,8 +7,7 @@ namespace HelloWorldProgram
 	{
 		private static void Main(string[] args)
         {
-        	var message = GreetingFactory.Create(args);
-        	message.Display();
+        	Console.WriteLine(GreetingFactory.Create(args).Display());
     	}
 	}
 }

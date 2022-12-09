@@ -1,9 +1,6 @@
-using System;
-using HelloWorldProgram.BusinessLogic.Interfaces;
-
 namespace HelloWorldProgram.BusinessLogic
 {
-	internal class HelpMenu:IDisplayable
+	internal class HelpMenu:AbstractDisplay
 	{
 		private string[] _data;
 
@@ -12,21 +9,22 @@ namespace HelloWorldProgram.BusinessLogic
 			_data = data;
 		}
 		
-		public void Display()
+		public override string Display()
 		{
-	        Console.WriteLine("Input <Name> <Language>\n");
-    		Console.WriteLine("Example:");
-    		Console.WriteLine("\tHello");
-    		Console.WriteLine("\tHello Tiffany");
-    		Console.WriteLine("\tHello Tiffany French");
-    		Console.WriteLine("\tHello French");
-    		Console.WriteLine("\tHello help\n");
-    		Console.WriteLine("Listed Active Languages:");
+	        _result.AppendLine("Input <Name> <Language>\n");
+    		_result.AppendLine("Example:");
+    		_result.AppendLine("\tHello");
+    		_result.AppendLine("\tHello Tiffany");
+    		_result.AppendLine("\tHello Tiffany French");
+    		_result.AppendLine("\tHello French");
+    		_result.AppendLine("\tHello help\n");
+    		_result.AppendLine("Listed Active Languages:");
     		var a = new Greeting(_data);
     		foreach(var greeting in a.Greetings)
     		{
-    			Console.WriteLine("\t{0}", greeting.Key);
+    			_result.AppendLine("\t"+greeting.Key);
     		}
+    		return _result.ToString();
 		}
 	}
 }
