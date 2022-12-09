@@ -1,1 +1,3 @@
-hello.exe
+*.exe
+*.dll
+*.trx

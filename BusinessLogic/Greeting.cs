@@ -1,10 +1,11 @@
 //csc /target:library /out:BusinessLogic.dll .\BusinessLogic\Greeting.cs
 using System;
 using System.Collections.Generic;
+using HelloWorldProgram.BusinessLogic.Interfaces;
 
 namespace HelloWorldProgram.BusinessLogic
 {
-	internal class Greeting //TODO: add factory
+	internal class Greeting:IDisplayable
 	{
 		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
 			{"ENGLISH", "Hello World!"},
@@ -17,7 +18,6 @@ namespace HelloWorldProgram.BusinessLogic
 
     	private string _name = "";
     	private string _greeting = _mapGreetings["ENGLISH"];
-    	public int X = 5;
 
     	public Dictionary<string,string> Greetings 
     	{
@@ -54,7 +54,7 @@ namespace HelloWorldProgram.BusinessLogic
     		return args.Length > 0 && !IsAMappedLanguage(args[0]);
     	}
 
-    	public void DisplayGreeting()
+    	public void Display()
     	{
     		if(_name != "")
     		{
