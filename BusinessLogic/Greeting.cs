@@ -57,7 +57,7 @@ namespace HelloWorldProgram.BusinessLogic
     		{
     			_result.AppendLine(_name);
     		}
-    		_result.AppendLine(_greeting);
+    		_result.Append(_greeting);
     		return base.Display();
     	}
 
