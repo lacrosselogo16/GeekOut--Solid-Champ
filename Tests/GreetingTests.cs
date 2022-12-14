@@ -109,5 +109,51 @@ namespace Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+         [TestMethod]
+        public void TestMixCaseNameTest()
+        {
+            //Arrange
+            var expected = "AbCdEfG";
+            var value = "abcdefg";
+            //Act
+            var actual = MixedCase(value);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void TestMixCaseNameTest2()
+        {
+            //Arrange
+            var expected = "abCdEfG";
+            var value = "Abcdefg";
+            //Act
+            var actual = MixedCase(value);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        private string MixedCase(string value)
+        {
+            var result = "";
+            var characterList = value.ToCharArray();
+            bool isUpper = true;
+            foreach(var item in characterList)
+            {
+                if(isUpper)
+                {
+                    isUpper = false;
+                    result = result + item.ToString().ToUpper();
+                }
+                else
+                {
+                    isUpper = true;
+                    result = result + item.ToString().ToLower(); 
+                }
+            }
+            return result;
+        }
     }
 }
