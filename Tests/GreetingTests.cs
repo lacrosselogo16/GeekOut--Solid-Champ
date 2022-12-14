@@ -1,21 +1,113 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldProgram.BusinessLogic;
 
-[TestClass]
-public class GreetingTests
+namespace Tests
 {
-    [TestMethod]
-    public void BlankArgsTest()
+    [TestClass]
+    public class GreetingTests
     {
-        //Arrange
-        var expected = "Hello World!";
-        string[] args = {""};
+        protected string _languageName = "English";
+        protected string _greeting = "Hello World!";
+        protected string _userName = "Gregory";
 
-        //Act
-        var actual = GreetingFactory.Create(args).Display();
+        [TestMethod]
+        public void BlankArgsTest()
+        {
+            //Arrange
+            var expected = "Hello World!";
+            string[] args = {""};
 
-        //Assert
-        Assert.AreEqual(expected, actual);
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
 
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void PassLanguageNameTest()
+        {
+            //Arrange
+            var expected = _greeting;
+            string[] args = {_languageName};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestMethod]
+        public void PassUppercaseLanguageNameTest()
+        {
+            //Arrange
+            var expected = _greeting;
+            string[] args = {_languageName.ToUpper()};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassLowercaseLanguageNameTest()
+        {
+            //Arrange
+            var expected = _greeting;
+            string[] args = {_languageName.ToLower()};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassUserNameAndLanguageNameTest()
+        {
+            //Arrange
+            var expected = _userName + "\r\n" + _greeting;
+            string[] args = {_userName,_languageName};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassThreeArgumentsTest()
+        {
+            //Arrange
+            var expected = _userName + "\r\n" + _greeting;
+            string[] args = {_userName,_languageName, "blah"};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassAlternatingCaseLanguageNameTest()
+        {
+            //Arrange
+            var expected = _greeting;
+            string[] args = {_languageName};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
