@@ -144,14 +144,13 @@ namespace Tests
             {
                 if(isUpper)
                 {
-                    isUpper = false;
                     result = result + item.ToString().ToUpper();
                 }
                 else
                 {
-                    isUpper = true;
                     result = result + item.ToString().ToLower(); 
                 }
+                isUpper = !isUpper;
             }
             return result;
         }
