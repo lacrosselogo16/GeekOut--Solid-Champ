@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldProgram.BusinessLogic;
 
@@ -140,16 +141,10 @@ namespace Tests
             var result = "";
             var characterList = value.ToCharArray();
             bool isUpper = true;
-            foreach(var item in characterList)
+            foreach(var singleCharacter in characterList)
             {
-                if(isUpper)
-                {
-                    result = result + item.ToString().ToUpper();
-                }
-                else
-                {
-                    result = result + item.ToString().ToLower(); 
-                }
+                result = result + ((isUpper)?Char.ToUpper(singleCharacter):Char.ToLower(singleCharacter));
+               
                 isUpper = !isUpper;
             }
             return result;
