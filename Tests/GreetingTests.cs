@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldProgram.BusinessLogic;
 
@@ -127,7 +128,7 @@ namespace Tests
         public void TestMixCaseNameTest2()
         {
             //Arrange
-            var expected = "abCdEfG";
+            var expected = "AbCdEfG";
             var value = "Abcdefg";
             //Act
             var actual = MixedCase(value);
@@ -138,16 +139,17 @@ namespace Tests
 
         private string MixedCase(string value)
         {
-            var result = "";
+            var isUpper = true;
+            var result = new StringBuilder();
             var characterList = value.ToCharArray();
-            bool isUpper = true;
+
             foreach(var singleCharacter in characterList)
             {
-                result = result + ((isUpper)?Char.ToUpper(singleCharacter):Char.ToLower(singleCharacter));
-               
+                result.Append((isUpper)?Char.ToUpper(singleCharacter):Char.ToLower(singleCharacter));
                 isUpper = !isUpper;
             }
-            return result;
+
+            return result.ToString();
         }
     }
 }
