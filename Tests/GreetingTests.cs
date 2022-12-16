@@ -6,26 +6,11 @@ using HelloWorldProgram.BusinessLogic;
 namespace Tests
 {
     [TestClass]
-    public class GreetingTests
+    public abstract class GreetingTests
     {
         protected string _languageName = "English";
         protected string _greeting = "Hello World!";
         protected string _userName = "Gregory";
-
-        [TestMethod]
-        public void BlankArgsTest()
-        {
-            //Arrange
-            var expected = "Hello World!";
-            string[] args = {""};
-
-            //Act
-            var actual = GreetingFactory.Create(args).Display();
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-
-        }
 
         [TestMethod]
         public void PassLanguageNameTest()
