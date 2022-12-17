@@ -10,6 +10,7 @@ namespace Tests
         protected string _languageName = "English";
         protected string _greeting = "Hello World!";
         protected string _userName = "Gregory";
+        protected string _fullName = "Gregory Jones";
 
         [TestMethod]
         public void PassLanguageNameTest()
@@ -60,6 +61,20 @@ namespace Tests
             //Arrange
             var expected = _userName + "\r\n" + _greeting;
             string[] args = {_userName,_languageName};
+
+            //Act
+            var actual = GreetingFactory.Create(args).Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PassFullUserNameAndLanguageNameTest()
+        {
+            //Arrange
+            var expected = _fullName + "\r\n" + _greeting;
+            string[] args = {_fullName,_languageName};
 
             //Act
             var actual = GreetingFactory.Create(args).Display();
