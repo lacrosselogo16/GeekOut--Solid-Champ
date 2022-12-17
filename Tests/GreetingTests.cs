@@ -1,5 +1,4 @@
 using System;
-using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldProgram.BusinessLogic;
 
@@ -84,70 +83,17 @@ namespace Tests
         }
 
         [TestMethod]
-        public void PassAlternatingCaseLanguageNameTest()
+        public void PassMixedCaseLanguageNameTest()
         {
             //Arrange
             var expected = _greeting;
-            string[] args = {_languageName};
+            string[] args = {TestHelper.MixedCase(_languageName)};
 
             //Act
             var actual = GreetingFactory.Create(args).Display();
 
             //Assert
             Assert.AreEqual(expected, actual);
-        }
-         [TestMethod]
-        public void TestMixCaseNameTest()
-        {
-            //Arrange
-            var expected = "AbCdEfG";
-            var value = "abcdefg";
-            //Act
-            var actual = MixedCase(value);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestMixCaseNameTest2()
-        {
-            //Arrange
-            var expected = "AbCdEfG";
-            var value = "Abcdefg";
-            //Act
-            var actual = MixedCase(value);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void TestMixCaseNameTest3()
-        {
-            //Arrange
-            var expected = "aBcDeFg";
-            var value = "Abcdefg";
-            //Act
-            var actual = MixedCase(value, false);
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-        private string MixedCase(string value, bool startWithUpper = true)
-        {
-            var isUpper = startWithUpper;
-            var result = new StringBuilder();
-            var characterList = value.ToCharArray();
-
-            foreach(var singleCharacter in characterList)
-            {
-                result.Append((isUpper)?Char.ToUpper(singleCharacter):Char.ToLower(singleCharacter));
-                isUpper = !isUpper;
-            }
-
-            return result.ToString();
         }
     }
 }
