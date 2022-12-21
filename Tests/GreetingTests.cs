@@ -43,7 +43,7 @@ namespace Tests
             string[] args = {_userName,_languageName};
 
             //Act and Assert
-            Test(args, CreateExpectedNameWithGreeting());
+            Test(args, ExpectedGreetingWith());
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace Tests
             string[] args = {_fullName,_languageName};
 
             //Act and Assert
-            Test(args, CreateExpectedNameWithGreeting(true));
+            Test(args, ExpectedGreetingWith(true));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace Tests
             string[] args = {_userName,_languageName, "blah"};
 
             //Act and Assert
-            Test(args, CreateExpectedNameWithGreeting());
+            Test(args, ExpectedGreetingWith());
         }
 
         [TestMethod]

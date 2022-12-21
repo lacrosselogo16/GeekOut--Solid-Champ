@@ -22,7 +22,7 @@ namespace Tests
             Assert.AreEqual(expected, actual);
         }
 
-        protected string CreateExpectedNameWithGreeting(bool isFullName = false)
+        protected string ExpectedGreetingWith(bool isFullName = false)
         {
 
             return ((isFullName)?_fullName:_userName) + "\r\n" + _greeting;
