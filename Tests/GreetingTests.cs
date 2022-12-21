@@ -13,7 +13,7 @@ namespace Tests
             string[] args = {_languageName};
 
             //Act and Assert
-            ActAndAssert(args);
+            Test(args);
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace Tests
             string[] args = {_languageName.ToUpper()};
 
             //Act and Assert
-            ActAndAssert(args);
+            Test(args);
         }
 
         [TestMethod]
@@ -33,7 +33,7 @@ namespace Tests
             string[] args = {_languageName.ToLower()};
 
             //Act and Assert
-            ActAndAssert(args);
+            Test(args);
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace Tests
             string[] args = {_userName,_languageName};
 
             //Act and Assert
-            ActAndAssert(args, CreateExpectedNameWithGreeting());
+            Test(args, CreateExpectedNameWithGreeting());
         }
 
         [TestMethod]
@@ -53,7 +53,7 @@ namespace Tests
             string[] args = {_fullName,_languageName};
 
             //Act and Assert
-            ActAndAssert(args, CreateExpectedNameWithGreeting(true));
+            Test(args, CreateExpectedNameWithGreeting(true));
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace Tests
             string[] args = {_userName,_languageName, "blah"};
 
             //Act and Assert
-            ActAndAssert(args, CreateExpectedNameWithGreeting());
+            Test(args, CreateExpectedNameWithGreeting());
         }
 
         [TestMethod]
@@ -73,7 +73,7 @@ namespace Tests
             string[] args = {TestHelper.MixedCase(_languageName)};
 
             //Act and Assert
-            ActAndAssert(args);
+            Test(args);
         }
     }
 }
