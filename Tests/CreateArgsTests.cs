@@ -40,7 +40,12 @@ namespace Tests
         [TestMethod]
         public void CreateFirstNameLanguageAndThirdConditionTest()
         {
-            Assert.AreEqual(_languageName, Create(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER)[0]);
+            var expected = new string[] {_userName,_languageName, "blah"};
+            var actual = Create(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER);
+            Assert.AreEqual(expected[0], actual[0]);
+            Assert.AreEqual(expected[1], actual[1]);
+            Assert.AreEqual(expected[2], actual[2]);
+
         }
         [TestMethod]
         public void CreateNullTest()
