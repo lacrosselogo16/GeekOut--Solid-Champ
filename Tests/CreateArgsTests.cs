@@ -58,7 +58,7 @@ namespace Tests
         [TestMethod]
         public void CreateNullTest()
         {
-            Assert.AreEqual(_languageName, Create(ArgType.NULL)[0]);
+            Assert.IsNull(Create(ArgType.NULL));
         }
     }
 }
