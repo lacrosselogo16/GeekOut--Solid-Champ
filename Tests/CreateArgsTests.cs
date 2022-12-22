@@ -25,7 +25,9 @@ namespace Tests
         [TestMethod]
         public void CreateLanguageOnlyWithMixedCaseTest()
         {
-            Assert.AreEqual(_languageName, Create(ArgType.LANGUAGE_ONLY_MIXEDCASE)[0]);
+            var expected = new string[] {TestHelper.MixedCase(_languageName)};
+            var actual = Create(ArgType.LANGUAGE_ONLY_MIXEDCASE);
+            Assert.AreEqual(expected[0], actual[0]);
         }
         [TestMethod]
         public void CreateFirstNameWithLanguageTest()
