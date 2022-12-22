@@ -30,7 +30,7 @@ namespace Tests
         [TestMethod]
         public void CreateFirstNameWithLanguageTest()
         {
-            string[] expected = {_userName,_languageName};
+            var expected = new string[] {_userName,_languageName};
             var actual = Create(ArgType.FIRSTNAME_WITH_LANGUAGE);
             Assert.AreEqual(expected[0], actual[0]);
             Assert.AreEqual(expected[1], actual[1]);
@@ -38,7 +38,10 @@ namespace Tests
         [TestMethod]
         public void CreateFullNameWithLanguageTest()
         {
-            Assert.AreEqual(_languageName, Create(ArgType.FULLNAME_WITH_LANGUAGE)[0]);
+            var expected = new string[] {_fullName,_languageName};
+            var actual = Create(ArgType.FULLNAME_WITH_LANGUAGE);
+            Assert.AreEqual(expected[0], actual[0]);
+            Assert.AreEqual(expected[1], actual[1]);
         }
         [TestMethod]
         public void CreateFirstNameLanguageAndThirdConditionTest()
