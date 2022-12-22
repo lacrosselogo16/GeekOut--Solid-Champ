@@ -3,28 +3,31 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
-    //TODO:Add enum for first name and fullname.
     [TestClass]
-    public abstract class GreetingTests:GreetingTestsBase
+    public abstract class GreetingTests:ArgFactory
     {
+        [TestMethod]
+        public void CreateLanguageOnlyTest()
+        {
+            Assert.AreEqual(_languageName, Create(ArgType.LANGUAGE_ONLY)[0]);
+        }
+
+        [TestMethod]
+        public void CreateLanguageOnlyWithUpperCaseTest()
+        {
+            Assert.AreEqual(_languageName.ToUpper(), Create(ArgType.LANGUAGE_ONLY_UPPERCASE)[0]);
+        }
+
         [TestMethod]
         public void PassLanguageNameTest()
         {
-            //Arrange
-            string[] args = {_languageName};
-
-            //Act and Assert
-            TestGreeting(args);
+            TestGreeting(Create(ArgType.LANGUAGE_ONLY));
         }
 
         [TestMethod]
         public void PassUppercaseLanguageNameTest()
         {
-            //Arrange
-            string[] args = {_languageName.ToUpper()};
-
-            //Act and Assert
-            TestGreeting(args);
+            TestGreeting(Create(ArgType.LANGUAGE_ONLY_UPPERCASE));
         }
 
         [TestMethod]
