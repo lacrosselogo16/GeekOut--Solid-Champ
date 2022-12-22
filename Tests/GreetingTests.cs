@@ -21,51 +21,31 @@ namespace Tests
         [TestMethod]
         public void PassLowercaseLanguageNameTest()
         {
-            //Arrange
-            string[] args = {_languageName.ToLower()};
-
-            //Act and Assert
-            TestGreeting(args);
+            TestGreeting(Create(ArgType.LANGUAGE_ONLY_LOWERCASE));
         }
 
         [TestMethod]
         public void PassUserNameAndLanguageNameTest()
         {
-            //Arrange
-            string[] args = {_userName,_languageName};
-
-            //Act and Assert
-            TestGreeting(args, ExpectedGreetingWith());
+            TestGreeting(Create(ArgType.FIRSTNAME_WITH_LANGUAGE), ExpectedGreetingWith());
         }
 
         [TestMethod]
         public void PassFullUserNameAndLanguageNameTest()
         {
-            //Arrange
-            string[] args = {_fullName,_languageName};
-
-            //Act and Assert
-            TestGreeting(args, ExpectedGreetingWith(true));
+            TestGreeting(Create(ArgType.FULLNAME_WITH_LANGUAGE), ExpectedGreetingWith(true));
         }
 
         [TestMethod]
         public void PassThreeArgumentsTest()
         {
-            //Arrange
-            string[] args = {_userName,_languageName, "blah"};
-
-            //Act and Assert
-            TestGreeting(args, ExpectedGreetingWith());
+            TestGreeting(Create(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
         }
 
         [TestMethod]
         public void PassMixedCaseLanguageNameTest()
         {
-            //Arrange
-            string[] args = {TestHelper.MixedCase(_languageName)};
-
-            //Act and Assert
-            TestGreeting(args);
+            TestGreeting(Create(ArgType.LANGUAGE_ONLY_MIXEDCASE));
         }
     }
 }
