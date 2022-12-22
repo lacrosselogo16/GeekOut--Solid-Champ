@@ -13,7 +13,7 @@ namespace Tests
 	}
 	public class ArgFactory:GreetingTestsBase
 	{
-		protected string[] Create(ArgType value)
+		protected string[] With(ArgType value)
 		{
 			switch(value)
 			{
