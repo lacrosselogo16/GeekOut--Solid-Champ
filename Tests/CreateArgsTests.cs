@@ -30,7 +30,10 @@ namespace Tests
         [TestMethod]
         public void CreateFirstNameWithLanguageTest()
         {
-            Assert.AreEqual(_languageName, Create(ArgType.FIRSTNAME_WITH_LANGUAGE)[0]);
+            string[] expected = {_userName,_languageName};
+            var actual = Create(ArgType.FIRSTNAME_WITH_LANGUAGE);
+            Assert.AreEqual(expected[0], actual[0]);
+            Assert.AreEqual(expected[1], actual[1]);
         }
         [TestMethod]
         public void CreateFullNameWithLanguageTest()
