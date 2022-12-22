@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
-    //TODO:kdajfahiorgkad'cladfijrojbnAdd enum for first name and fullname.
+    //TODO:Add enum for first name and fullname.
     [TestClass]
     public abstract class GreetingTests:GreetingTestsBase
     {
@@ -14,7 +14,7 @@ namespace Tests
             string[] args = {_languageName};
 
             //Act and Assert
-            Test(args);
+            TestGreeting(args);
         }
 
         [TestMethod]
@@ -24,7 +24,7 @@ namespace Tests
             string[] args = {_languageName.ToUpper()};
 
             //Act and Assert
-            Test(args);
+            TestGreeting(args);
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace Tests
             string[] args = {_languageName.ToLower()};
 
             //Act and Assert
-            Test(args);
+            TestGreeting(args);
         }
 
         [TestMethod]
@@ -44,7 +44,7 @@ namespace Tests
             string[] args = {_userName,_languageName};
 
             //Act and Assert
-            Test(args, ExpectedGreetingWith());
+            TestGreeting(args, ExpectedGreetingWith());
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace Tests
             string[] args = {_fullName,_languageName};
 
             //Act and Assert
-            Test(args, ExpectedGreetingWith(true));
+            TestGreeting(args, ExpectedGreetingWith(true));
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace Tests
             string[] args = {_userName,_languageName, "blah"};
 
             //Act and Assert
-            Test(args, ExpectedGreetingWith());
+            TestGreeting(args, ExpectedGreetingWith());
         }
 
         [TestMethod]
@@ -74,7 +74,7 @@ namespace Tests
             string[] args = {TestHelper.MixedCase(_languageName)};
 
             //Act and Assert
-            Test(args);
+            TestGreeting(args);
         }
     }
 }

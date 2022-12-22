@@ -10,7 +10,7 @@ namespace Tests
         protected string _userName = "Gregory";
         protected string _fullName = "Gregory Jones";
 
-        protected void Test(string[] args, string expected = "")
+        protected void TestGreeting(string[] args, string expected = "")
         {
             //Arrange
             expected = (expected == "")?_greeting:expected;
