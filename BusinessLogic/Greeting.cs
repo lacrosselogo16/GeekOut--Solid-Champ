@@ -12,6 +12,7 @@ namespace HelloWorldProgram.BusinessLogic
 			,{"JAPANESE", "こんにちは世界"}
 			,{"CHINESE", "你好世界"}
 			,{"GERMAN", "Hallo Welt!"}
+			,{"UKRAINIAN", "Привіт Світ!"}
 		};
 
     	private string _name = "";
