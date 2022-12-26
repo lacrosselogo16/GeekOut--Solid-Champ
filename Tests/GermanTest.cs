@@ -10,10 +10,5 @@ namespace Tests
             this._languageName = "German";
             this._greeting = "Hallo Welt!";
         }
-        public GermanTest(string language)
-        {
-            this._languageName = "German";
-            this._greeting = "Hallo Welt!";
-        }
     }
 }
