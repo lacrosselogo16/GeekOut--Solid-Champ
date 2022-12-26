@@ -17,5 +17,3 @@ namespace Tests
         }
     }
 }
-var language = new GermanTest();
-var language2 = new GermanTest("Ich bin ein auslander");
