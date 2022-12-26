@@ -5,12 +5,13 @@ namespace HelloWorldProgram.BusinessLogic
 	internal class Greeting:AbstractDisplay
 	{
 		private static Dictionary<string,string> _mapGreetings = new Dictionary<string,string>{
-			{"ENGLISH", "Hello World!"},
-			{"FRENCH", "Bonjour le monde!"},
-			{"ITALIAN", "Ciao Mondo!"},
-			{"SPANISH", "Hola Mundo!"},
-			{"JAPANESE", "こんにちは世界"},
-			{"CHINESE", "你好世界"}
+			{"ENGLISH", "Hello World!"}
+			,{"FRENCH", "Bonjour le monde!"}
+			,{"ITALIAN", "Ciao Mondo!"}
+			,{"SPANISH", "Hola Mundo!"}
+			,{"JAPANESE", "こんにちは世界"}
+			,{"CHINESE", "你好世界"}
+			// ,{"GERMAN", "Hallo Welt!"}
 		};
 
     	private string _name = "";
