@@ -7,30 +7,68 @@ hello Gregory Jones english
 Hello "Gregory Jones" french blah 
 Hello "Gregory Jones" blahblah
 
-::testing no parameters (Success)
-Hello Gregory
-Hello "Gregory Jones" 
-Hello
+
 
 :: Help menu test (Success)
 hello help
 
+:: One Off
+	::FirstName Only
+Hello Gregory
+	::Fullname only
+Hello "Gregory Jones"
+	::No parameter 
+Hello
+
 :: English test (Success)
+:: Language Only
 hello English  
 Hello ENGLISH
 hello english
 hello EnGlIsH
+::FirstName
+	::Regular
 hello Gregory English
 Hello Gregory ENGLISH
 hello Gregory english 
 hello Gregory EnGlIsH
+	::Swap
+hello English Gregory
+hello ENGLISH Gregory
+hello english Gregory
+hello EnGlIsH Gregory
+	::Regular with third parameter
+hello Gregory English blah blah blah
+hello Gregory ENGLISH blah blah blah
+hello Gregory english blah blah blah
+hello Gregory EnGlIsH blah blah blah
+	::Swap with third parameter
+hello English Gregory blah blah blah
+hello ENGLISH Gregory blah blah blah
+hello english Gregory blah blah blah
+hello EnGlIsH Gregory blah blah blah
+
+:: Fullname
 hello "Gregory Jones" English 
 Hello "Gregory Jones" ENGLISH
 hello "Gregory Jones" english 
 hello "Gregory Jones" EnGlIsH
-hello English Gregory
-hello Gregory English blah blah blah 
-hello English Gregory blah blah blah 
+	::Swap
+hello English "Gregory Jones"
+hello ENGLISH "Gregory Jones"
+hello english "Gregory Jones"
+hello EnGlIsH "Gregory Jones"
+	::Regular with third parameter
+hello "Gregory Jones" English blah blah blah
+hello "Gregory Jones" ENGLISH blah blah blah
+hello "Gregory Jones" english blah blah blah
+hello "Gregory Jones" EnGlIsH blah blah blah
+	::Swap with third parameter
+hello English "Gregory Jones" blah blah blah
+hello ENGLISH "Gregory Jones" blah blah blah
+hello english "Gregory Jones" blah blah blah
+hello EnGlIsH "Gregory Jones" blah blah blah
+ 
 
 :: French test (Success)
 hello French 
