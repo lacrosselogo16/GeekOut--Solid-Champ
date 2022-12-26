@@ -1,0 +1,1 @@
+C:\PROGRA~2\MICROS~2\2019\TESTAG~1\Common7\IDE\MSTest.exe /testcontainer:.\GreetingTests.dll /test:%1 /detail:errormessage
