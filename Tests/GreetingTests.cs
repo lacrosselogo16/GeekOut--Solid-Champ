@@ -6,6 +6,8 @@ namespace Tests
     [TestClass]
     public abstract class GreetingTests:ArgFactory
     {
+        private string _ExpectedToFail = "Turd";
+        //Language Only
         [TestMethod]
         public void PassLanguageNameTest()
         {
@@ -29,7 +31,7 @@ namespace Tests
         {
             TestGreeting(With(ArgType.LANGUAGE_ONLY_MIXEDCASE));
         }
-
+        //First Name and Language
         [TestMethod]
         public void PassUserNameAndLanguageNameTest()
         {
@@ -53,6 +55,31 @@ namespace Tests
         {
             TestGreeting(With(ArgType.FIRSTNAME_WITH_MIXEDCASELANGUAGE), ExpectedGreetingWith());
         }
+        //Swap First Name and Language
+        [TestMethod]
+        public void SWAP_FIRSTNAME_WITH_LANGUAGE()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LANGUAGE), "Bugger");
+        }
+
+        [TestMethod]
+        public void SWAP_FIRSTNAME_WITH_UPPERCASELANGUAGE()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_UPPERCASELANGUAGE), ExpectedGreetingWith());
+        }
+
+        [TestMethod]
+        public void SWAP_FIRSTNAME_WITH_LOWERCASELANGUAGE()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LOWERCASELANGUAGE), ExpectedGreetingWith());
+        }
+
+        [TestMethod]
+        public void SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE), ExpectedGreetingWith());
+        }
+        //FirstName with third Parameter
 
         [TestMethod]
         public void PassFullUserNameAndLanguageNameTest()
