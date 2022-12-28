@@ -55,11 +55,16 @@ namespace HelloWorldProgram.BusinessLogic
 
     	public override string Display()
     	{
-    		if(_name != "")
+    		if(string.IsNullOrEmpty(_name))
     		{
-    			_result.AppendLine(_name);
+    			_result.Append(_greeting);
     		}
-    		_result.Append(_greeting);
+    		else
+    		{
+    			_result.Append(_greeting.Split(' ')[0]);
+    			_result.Append(" ");
+    			_result.Append(_name);
+    		}
     		return base.Display();
     	}
 

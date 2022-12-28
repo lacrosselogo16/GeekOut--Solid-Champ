@@ -24,8 +24,8 @@ namespace Tests
 
         protected string ExpectedGreetingWith(bool isFullName = false)
         {
-
-            return ((isFullName)?_fullName:_userName) + "\r\n" + _greeting;
+            // should return "Hello Gregory" if isFullName is true then "Hello Gregory Jones"
+            return _greeting.Split(' ')[0] + " " + ((isFullName)?_fullName:_userName);
         } 
     }
 }
