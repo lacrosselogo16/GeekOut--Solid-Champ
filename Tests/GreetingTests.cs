@@ -100,8 +100,28 @@ namespace Tests
         {
             TestGreeting(With(ArgType.FIRSTNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
         }
+        //Swap FirstName with third Parameter
+        [TestMethod]
+        public void SwapPassFirstNameLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFirstNameUpperCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_UPPER_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFirstNameLowerCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_LOWER_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFirstNameMixedCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
         //
-
         [TestMethod]
         public void PassFullUserNameAndLanguageNameTest()
         {
