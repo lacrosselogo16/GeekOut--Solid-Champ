@@ -121,11 +121,26 @@ namespace Tests
         {
             TestGreeting(With(ArgType.SWAP_FIRSTNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
         }
-        //
+        //FullName and language Test
         [TestMethod]
-        public void PassFullUserNameAndLanguageNameTest()
+        public void PassFullNameAndLanguageNameTest()
         {
             TestGreeting(With(ArgType.FULLNAME_WITH_LANGUAGE), ExpectedGreetingWith(true));
+        }
+        [TestMethod]
+        public void PassFullNameAndUpperCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FULLNAME_WITH_UPPERCASELANGUAGE), ExpectedGreetingWith(true));
+        }
+        [TestMethod]
+        public void PassFullNameAndLowerCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FULLNAME_WITH_LOWERCASELANGUAGE), ExpectedGreetingWith(true));
+        }
+        [TestMethod]
+        public void PassFullNameAndMixedCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FULLNAME_WITH_MIXEDCASELANGUAGE), ExpectedGreetingWith(true));
         }
 
 
