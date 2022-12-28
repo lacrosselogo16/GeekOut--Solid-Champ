@@ -59,25 +59,25 @@ namespace Tests
         [TestMethod]
         public void SWAP_FIRSTNAME_WITH_LANGUAGE()
         {
-            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LANGUAGE), "Bugger");
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LANGUAGE), _ExpectedToFail);
         }
 
         [TestMethod]
         public void SWAP_FIRSTNAME_WITH_UPPERCASELANGUAGE()
         {
-            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_UPPERCASELANGUAGE), ExpectedGreetingWith());
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_UPPERCASELANGUAGE), _ExpectedToFail);
         }
 
         [TestMethod]
         public void SWAP_FIRSTNAME_WITH_LOWERCASELANGUAGE()
         {
-            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LOWERCASELANGUAGE), ExpectedGreetingWith());
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_LOWERCASELANGUAGE), _ExpectedToFail);
         }
 
         [TestMethod]
         public void SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE()
         {
-            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE), ExpectedGreetingWith());
+            TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE), _ExpectedToFail);
         }
         //FirstName with third Parameter
 
