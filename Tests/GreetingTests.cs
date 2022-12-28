@@ -80,6 +80,27 @@ namespace Tests
             TestGreeting(With(ArgType.SWAP_FIRSTNAME_WITH_MIXEDCASELANGUAGE), _greeting);
         }
         //FirstName with third Parameter
+        [TestMethod]
+        public void PassFirstNameLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
+        }
+        [TestMethod]
+        public void PassFirstNameUpperCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_UPPER_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
+        }
+        [TestMethod]
+        public void PassFirstNameLowerCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_LOWER_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
+        }
+        [TestMethod]
+        public void PassFirstNameMixedCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
+        }
+        //
 
         [TestMethod]
         public void PassFullUserNameAndLanguageNameTest()
@@ -87,11 +108,6 @@ namespace Tests
             TestGreeting(With(ArgType.FULLNAME_WITH_LANGUAGE), ExpectedGreetingWith(true));
         }
 
-        [TestMethod]
-        public void PassThreeArgumentsTest()
-        {
-            TestGreeting(With(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
-        }
 
     }
 }
