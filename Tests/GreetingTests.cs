@@ -25,9 +25,33 @@ namespace Tests
         }
 
         [TestMethod]
+        public void PassMixedCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.LANGUAGE_ONLY_MIXEDCASE));
+        }
+
+        [TestMethod]
         public void PassUserNameAndLanguageNameTest()
         {
             TestGreeting(With(ArgType.FIRSTNAME_WITH_LANGUAGE), ExpectedGreetingWith());
+        }
+
+        [TestMethod]
+        public void PassUserNameAndUpperCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_WITH_UPPERCASELANGUAGE), ExpectedGreetingWith());
+        }
+
+        [TestMethod]
+        public void PassUserNameAndLowerCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_WITH_LOWERCASELANGUAGE), ExpectedGreetingWith());
+        }
+
+        [TestMethod]
+        public void PassUserNameAndMixedCaseLanguageNameTest()
+        {
+            TestGreeting(With(ArgType.FIRSTNAME_WITH_MIXEDCASELANGUAGE), ExpectedGreetingWith());
         }
 
         [TestMethod]
@@ -42,10 +66,5 @@ namespace Tests
             TestGreeting(With(ArgType.FIRSTNAME_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith());
         }
 
-        [TestMethod]
-        public void PassMixedCaseLanguageNameTest()
-        {
-            TestGreeting(With(ArgType.LANGUAGE_ONLY_MIXEDCASE));
-        }
     }
 }
