@@ -45,5 +45,10 @@ namespace Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void HelpMenuTest()
+        {
+           Assert.Inconclusive();
+        }
     }
 }
