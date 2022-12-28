@@ -184,5 +184,26 @@ namespace Tests
         {
             TestGreeting(With(ArgType.FULLNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), ExpectedGreetingWith(true));
         }
+        //Swap FullName with third Parameter
+        [TestMethod]
+        public void SwapPassFullNameLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FULLNAME_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFullNameUpperCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FULLNAME_UPPER_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFullNameLowerCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FULLNAME_LOWER_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
+        [TestMethod]
+        public void SwapPassFullNameMixedCaseLanguageAndThirdParameter()
+        {
+            TestGreeting(With(ArgType.SWAP_FULLNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER), _greeting);
+        }
     }
 }
