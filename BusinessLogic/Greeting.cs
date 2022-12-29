@@ -14,6 +14,7 @@ namespace HelloWorldProgram.BusinessLogic
 			,{"GERMAN", "Hallo Welt!"}
 			,{"UKRAINIAN", "Привіт Світ!"}
 			,{"POLISH", "Witaj świecie!"}
+			,{"IGBO", "Ndewo Ụwa!"}
 		};
 
     	private string _name = "";
