@@ -3,6 +3,7 @@ namespace Tests
 	public enum ArgType
 	{
 		NULL
+		,NOTNULL
 		,EMPTY
 		//Language Only
 		,LANGUAGE_ONLY
@@ -49,5 +50,32 @@ namespace Tests
 		,SWAP_FULLNAME_UPPER_LANGUAGE_AND_THIRD_PARAMETER
 		,SWAP_FULLNAME_LOWER_LANGUAGE_AND_THIRD_PARAMETER
 		,SWAP_FULLNAME_MIXED_LANGUAGE_AND_THIRD_PARAMETER
+	}
+
+	public enum LanguageCase
+	{
+		NORMAL
+		,UPPER 
+		,LOWER 
+		,MIXED
+	}
+
+	public enum Name
+	{
+		NONAME
+		,FIRSTNAME
+		,FULLNAME
+	}
+
+	public enum ThirdParameter
+	{
+		YES
+		,NO
+	}
+
+	public enum SwapNameWithLanguage
+	{
+		YES
+		,NO
 	}
 }
