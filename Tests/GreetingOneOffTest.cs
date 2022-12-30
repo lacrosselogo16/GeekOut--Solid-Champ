@@ -1,5 +1,7 @@
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using HelloWorldProgram.BusinessLogic;
+using HelloWorldProgram.BusinessLogic.Interfaces;
 
 namespace Tests
 {
@@ -48,7 +50,38 @@ namespace Tests
         [TestMethod]
         public void HelpMenuTest()
         {
-           Assert.Inconclusive();
+            //Arrange
+            string expected = GetExpectedHelpMenu();
+            string[] args = {"help"};
+
+            //Act
+            IDisplayable helpMenu = GreetingFactory.Create(args);
+            string actual = helpMenu.Display();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        private string GetExpectedHelpMenu()
+        {
+            var helpMenuExpected = new StringBuilder();
+            helpMenuExpected.AppendLine("Input <Name> <Language>");
+            helpMenuExpected.AppendLine();
+            helpMenuExpected.AppendLine("Example:");
+            helpMenuExpected.AppendLine("\tHello");
+            helpMenuExpected.AppendLine("\tHello Tiffany");
+            helpMenuExpected.AppendLine("\tHello Tiffany French");
+            helpMenuExpected.AppendLine("\tHello French");
+            helpMenuExpected.AppendLine("\tHello help");
+            helpMenuExpected.AppendLine();
+            helpMenuExpected.AppendLine("Listed Active Languages:");
+            var a = new Greeting(new string[]{});
+            foreach(var greeting in a.Greetings)
+            {
+                helpMenuExpected.AppendLine("\t"+greeting.Key);
+            }
+            
+            return helpMenuExpected.ToString();
         }
     }
 }

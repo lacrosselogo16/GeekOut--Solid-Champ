@@ -11,13 +11,15 @@ namespace HelloWorldProgram.BusinessLogic
 		
 		public override string Display()
 		{
-	        _result.AppendLine("Input <Name> <Language>\n");
+	        _result.AppendLine("Input <Name> <Language>");
+	        _result.AppendLine();
     		_result.AppendLine("Example:");
     		_result.AppendLine("\tHello");
     		_result.AppendLine("\tHello Tiffany");
     		_result.AppendLine("\tHello Tiffany French");
     		_result.AppendLine("\tHello French");
-    		_result.AppendLine("\tHello help\n");
+    		_result.AppendLine("\tHello help");
+    		_result.AppendLine();
     		_result.AppendLine("Listed Active Languages:");
     		var a = new Greeting(_data);
     		foreach(var greeting in a.Greetings)
