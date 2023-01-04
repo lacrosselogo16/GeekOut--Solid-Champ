@@ -1,4 +1,4 @@
-namespace Tests
+namespace Tests.Enums.Arguments
 {
 	public enum ArgType
 	{

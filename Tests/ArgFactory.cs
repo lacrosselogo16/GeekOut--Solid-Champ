@@ -1,3 +1,5 @@
+using Tests.Enums.Arguments;
+
 namespace Tests
 {
 	public class ArgFactory:GreetingTestsBase
