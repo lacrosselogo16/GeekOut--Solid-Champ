@@ -1,43 +1,20 @@
 using Tests.Enums.Arguments;
+using System.Collections.Generic;
 
 namespace Tests
 {
 	public class ArgFactory:GreetingTestsBase
 	{
-		public void ThisSucks()
-		{
-			//this why you shouldn't use arrays
-			string[] array1 = new string[2]; // creates array of length 2, default values
-			string[] array2 = new string[] { "A", "B" }; // creates populated array of length 2
-			string[] array3 = { "A" , "B" }; // creates populated array of length 2
-			string[] array4 = new[] { "A", "B" };
-			string[] array5 = new string[0]; // creates array of length 2, default values
-			string[] array6 = new string[]{}; // creates populated array of length 2
-			string[] array7 = {}; // creates populated array of length 2
-			// string[] array8 = new[]{};
-			// string[] array9 = new string[]();
-			var array11 = new string[2]; // creates array of length 2, default values
-			var array12 = new string[] { "A", "B" }; // creates populated array of length 2
-			// var array13 = { "A" , "B" }; // creates populated array of length 2
-			var array14 = new[] { "A", "B" };
-			var array15 = new string[0]; // creates array of length 2, default values
-			var array16 = new string[]{}; // creates populated array of length 2
-			// var array17 = {}; // creates populated array of length 2
-		
-		}
-		private string[] _data;
+		private List<string> _data;
+
 		public string[] Data
 		{
 			get
 			{
-				return _data;
+				return _data.ToArray();
 			}
-			// example of a setter.
-			// set
-			// {
-			// 	_data = value;
-			// }
 		}
+
 		protected string[] With(ArgType argType)
 		{
 			switch(argType)
@@ -137,29 +114,28 @@ namespace Tests
 		}
 		protected string[] With(SwapNameWithLanguage swapNameWithLanguage, ThirdParameter thirdParameter, Name name, LanguageCase languageCase=LanguageCase.NORMAL, ArgType argType=ArgType.NOTNULL)
 		{
-			_data = new string[]{};
+			_data = new List<string>();
 			switch(argType)
 			{
-				case ArgType.NOTNULL:
-					break;
-				case ArgType.EMPTY:
-	            	return new string[]{};
 				case ArgType.NULL:
-	            default:
 	            	return null;
 			}
 
 			switch(languageCase)
 			{
 				case LanguageCase.UPPER:
-					return new string[] {_languageName.ToUpper()};
+					_data.Add(_languageName.ToUpper());
+					break;
 				case LanguageCase.LOWER:
-					return new string[] {_languageName.ToLower()};
+					_data.Add(_languageName.ToLower());
+					break;
 				case LanguageCase.MIXED:
-					return new string[] {TestHelper.MixedCase(_languageName)};
+					_data.Add(TestHelper.MixedCase(_languageName));
+					break;
 				case LanguageCase.NORMAL:
 				default:
-					return new string[] {_languageName};
+					_data.Add(_languageName);
+					break;
 			}
 
 			switch(name)
@@ -167,26 +143,32 @@ namespace Tests
 				case Name.NONAME:
 					return null;
 				case Name.FIRSTNAME:
-					return new string[] {_userName};
+					_data.Add(_userName);
+					break;
 				case Name.FULLNAME:
-					return new string[] {_fullName};
+					_data.Add(_fullName);
+					break;
 			}
 
 			switch(thirdParameter)
 			{
 				case ThirdParameter.YES:
-					break;
-				case ThirdParameter.NO:
+					_data.Add("blah");
 					break;
 			}
 
 			switch(swapNameWithLanguage)
 			{
 				case SwapNameWithLanguage.YES:
-					break;
-				case SwapNameWithLanguage.NO:
+					if(_data.Count > 1)
+					{
+						var temp = _data[0];
+						_data[0] = _data[1];
+						_data[1] = temp;
+					}
 					break;
 			}
+			return Data;
 		}
 	}
 }
