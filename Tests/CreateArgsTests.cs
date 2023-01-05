@@ -10,10 +10,6 @@ namespace Tests
         [TestMethod]
         public void CreateLanguageOnlyTest()
         {
-            // Example of calling a getter and setter.
-            // var factory = new ArgFactory();
-            // factory.Data = new string[]{};
-            // var myData = factory.Data;
             Assert.AreEqual(_languageName, With(ArgType.LANGUAGE_ONLY)[0]);
         }
 
