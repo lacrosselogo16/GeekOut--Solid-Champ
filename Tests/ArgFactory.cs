@@ -4,6 +4,27 @@ namespace Tests
 {
 	public class ArgFactory:GreetingTestsBase
 	{
+		public void ThisSucks()
+		{
+			//this why you shouldn't use arrays
+			string[] array1 = new string[2]; // creates array of length 2, default values
+			string[] array2 = new string[] { "A", "B" }; // creates populated array of length 2
+			string[] array3 = { "A" , "B" }; // creates populated array of length 2
+			string[] array4 = new[] { "A", "B" };
+			string[] array5 = new string[0]; // creates array of length 2, default values
+			string[] array6 = new string[]{}; // creates populated array of length 2
+			string[] array7 = {}; // creates populated array of length 2
+			// string[] array8 = new[]{};
+			// string[] array9 = new string[]();
+			var array11 = new string[2]; // creates array of length 2, default values
+			var array12 = new string[] { "A", "B" }; // creates populated array of length 2
+			// var array13 = { "A" , "B" }; // creates populated array of length 2
+			var array14 = new[] { "A", "B" };
+			var array15 = new string[0]; // creates array of length 2, default values
+			var array16 = new string[]{}; // creates populated array of length 2
+			// var array17 = {}; // creates populated array of length 2
+		
+		}
 		private string[] _data;
 		public string[] Data
 		{
