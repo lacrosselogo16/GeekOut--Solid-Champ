@@ -1,9 +1,130 @@
 using System;
+using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests.Enums.Arguments;
 
 namespace Tests
 {
+    public class House
+    {
+        private string _address;
+        public int _window;
+        public int _door;
+
+        public string Address
+        {
+            get
+            {
+                return _address.ToUpper();
+            }
+        }
+
+        public House(string address)
+        {
+            this._address = address;
+        }  
+    }
+    [TestClass]
+    public class HouseTest
+    {
+        [TestMethod]
+        public void HouseCall()
+        {
+            //Arrange
+            var a = 10;
+            var b = "10";
+            House house = new House("100 S 200 E, Salt Lake City, UT 84111");
+            var houseTwo = new House("100 W 200 N, Pleasant Grove, UT 84062");
+            //Act
+            // house.Address = "100 S 200 E, Salt Lake City, UT 84111";
+            // house._address = "100 S 200 E, Salt Lake City, UT 84111";
+            house._window = 2;
+            house._door = 8;
+            // houseTwo.Address = "100 W 200 N, Pleasant Grove, UT 84062";
+            houseTwo._window = 5;
+            houseTwo._door = 2;
+
+            // house.Address = "hello world";
+            var expectedOne = "100 S 200 E, SALT LAKE CITY, UT 84111";
+            var expectedTwo = "100 W 200 N, PLEASANT GROVE, UT 84062";
+            //Assert
+            Assert.AreEqual(expectedOne, house.Address);
+            Assert.AreEqual(expectedTwo, houseTwo.Address);
+
+            Assert.AreEqual(expectedOne, house.Address);
+            Assert.AreEqual(2, house._window);
+            Assert.AreEqual(8, house._door);
+            Assert.AreEqual(expectedTwo, houseTwo.Address);
+            Assert.AreEqual(5, houseTwo._window);
+            Assert.AreEqual(2, houseTwo._door);
+            Assert.IsNotNull(house, "Oopsie!");
+            // Assert.Fail("made to the end.");
+        }
+    }
+
+    public class Blah
+    {
+        private int _someInt = 10;
+        private string _someString = "Uncle Rocks!";
+        public int SomeInt
+        {
+            // int get()
+            get
+            {
+                return _someInt + 10;
+            }
+            // set(int value)
+            set
+            {
+                _someInt = value * 2;
+            }
+        }
+        public Blah AnotherBlah{get;set;}
+        public Blah MySelf{get{return this;}}
+        public string SomeString
+        {
+            // string get()
+            get
+            {
+                return _someString;
+            }
+            // set(string value)
+            set
+            {
+                _someString = value;
+            }
+        }
+
+        public string ThisSucksToo()
+        {
+            var sb = new StringBuilder("This sucks too: ");
+            sb.Append(_someString);
+            return sb.ToString();
+        }
+    }
+    [TestClass]
+    public class ThisSucksTooClassTests
+    {
+        [TestMethod]
+        public void TestOne()
+        {
+            //Arrange
+            //Act
+            //Assert
+            Assert.Fail();
+        }
+        [TestMethod]
+        public void TestTwo()
+        {
+            Assert.Fail();
+        }
+        [TestMethod]
+        public void TestThree()
+        {
+            Assert.Fail();
+        }
+        
+    }
     [TestClass]
     public abstract class GreetingTests:ArgFactory
     {
